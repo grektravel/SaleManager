@@ -1,0 +1,16 @@
+CREATE SEQUENCE id_seq
+INCREMENT BY 1
+     NO MAXVALUE
+     NO MINVALUE
+     CACHE 1;
+CREATE TABLE public.product
+(
+  id integer DEFAULT nextval('id_seq') NOT NULL,
+  name character varying(255) NOT NULL,
+  price integer NOT NULL,
+  CONSTRAINT firstkey PRIMARY KEY (id)
+)
+
+insert into product values (nextval('id_seq'), 'soap', 45)
+insert into product values (nextval('id_seq'), 'towel', 305)
+
